@@ -66,7 +66,7 @@ Add the comonent
 ```
 
 ```html
-<AudioMotion :stream="stream"></AudioMotion>
+<AudioMotion :stream="stream" :options="options"></AudioMotion>
 ```
 
 ## License
