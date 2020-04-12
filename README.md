@@ -1,6 +1,6 @@
 # vue-audiomotion-analyzer
 
-Wrapper for the awesome https://www.npmjs.com/package/audiomotion-analyzer
+Wrapper for the awesome [audiomotion-analyzer](https://www.npmjs.com/package/audiomotion-analyzer)
 
 ## Project setup
 
@@ -68,6 +68,12 @@ Add the comonent
 ```html
 <AudioMotion :stream="stream" :options="options"></AudioMotion>
 ```
+
+## Thanks
+
+Big thanks to [Hivanna](https://github.com/hvianna) for creating AudioMotion
+
+Checkout the [demo page](https://audiomotion.me/public/)
 
 ## License
 
