@@ -1,4 +1,9 @@
 # vue-audiomotion-analyzer
+[![npm (scoped with tag)](https://img.shields.io/npm/v/vue-audiomotion/latest.svg?style=flat-square)](https://npmjs.com/package/vue-audiomotion)
+[![npm](https://img.shields.io/npm/dt/vue-audiomotion.svg?style=flat-square)](https://npmjs.com/package/vue-audiomotion)
+[![Dependencies](https://david-dm.org/schlunsen/vue-audiomotion/status.svg?style=flat-square)](https://david-dm.org/schlunsen/vue-audiomotion)
+[![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
+
 
 Wrapper for the awesome [audiomotion-analyzer](https://www.npmjs.com/package/audiomotion-analyzer)
 
