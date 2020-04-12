@@ -7,6 +7,14 @@
       "name": "Rasmus Schlunsen"
     }
   ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "main":  "./dist/vue-audiomotion.common.js", 
   "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
