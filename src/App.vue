@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AudioMotion :stream="stream" />
+    <AudioMotion :stream="stream" :options="options" />
     
   </div>
 </template>
@@ -12,7 +12,13 @@ export default {
   name: 'App',
   data() {
     return {
-      stream: null
+      stream: null,
+      options: {
+        barSpace: 100,
+        lineWidth: 100,
+        gradient: 'prism',
+        lumiBars: true
+      }
     }
   },
   async mounted() {
