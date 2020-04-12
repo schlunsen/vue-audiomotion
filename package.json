@@ -1,0 +1,26 @@
+{
+  "name": "vue-audiomotion",
+  "description": "Vue wrapper for audiomotion-analyzer",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Rasmus Schlunsen"
+    }
+  ],
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-audiomotion ./src/components/index.js"
+  },
+  "dependencies": {
+    "audiomotion-analyzer": "^2.1.0",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
