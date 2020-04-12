@@ -9,15 +9,12 @@ export default {
   watch: {
     stream() {
       var audioCtx = new AudioContext();
-      console.info(this.stream);
       var source = audioCtx.createMediaStreamSource(this.stream);
       const audioMotion = new AudioMotionAnalyzer(
         document.getElementById("container"),
-        {}
+        this.options
       );
-
       let sourceMic = audioMotion.audioCtx.createMediaStreamSource(this.stream);
-      console.info(sourceMic, "Source mic");
       sourceMic.connect(audioMotion.analyzer);
     }
   }
