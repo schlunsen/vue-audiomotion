@@ -205,12 +205,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0fb84958-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AudioMotion.vue?vue&type=template&id=2e8e3816&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"container"}})}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0fb84958-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AudioMotion.vue?vue&type=template&id=6757e372&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:'audioMotion-' + this._uid})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/AudioMotion.vue?vue&type=template&id=2e8e3816&
+// CONCATENATED MODULE: ./src/components/AudioMotion.vue?vue&type=template&id=6757e372&
 
 // CONCATENATED MODULE: ./node_modules/audiomotion-analyzer/dist/audioMotion-analyzer.js
 /*!
@@ -1331,7 +1331,7 @@ class AudioMotionError extends Error {
     stream: function stream() {
       var audioCtx = new AudioContext();
       var source = audioCtx.createMediaStreamSource(this.stream);
-      var audioMotion = new AudioMotionAnalyzer(document.getElementById("container"), this.options);
+      var audioMotion = new AudioMotionAnalyzer(this.$refs['audioMotion' + this._uid], this.options);
       var sourceMic = audioMotion.audioCtx.createMediaStreamSource(this.stream);
       sourceMic.connect(audioMotion.analyzer);
     }

@@ -1,5 +1,5 @@
 <template>
-  <div id="container"></div>
+  <div :ref="'audioMotion-' + this._uid"></div>
 </template>
 <script>
 import AudioMotionAnalyzer from "audiomotion-analyzer";
@@ -11,7 +11,7 @@ export default {
       var audioCtx = new AudioContext();
       var source = audioCtx.createMediaStreamSource(this.stream);
       const audioMotion = new AudioMotionAnalyzer(
-        document.getElementById("container"),
+        this.$refs['audioMotion' + this._uid],
         this.options
       );
       let sourceMic = audioMotion.audioCtx.createMediaStreamSource(this.stream);
