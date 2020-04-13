@@ -8,7 +8,7 @@ export default {
   props: ["stream", "options"],
   watch: {
     stream() {
-      if (this.stream && this.stream.getAudioTracks()) {
+      if (this.stream && this.stream.getAudioTracks().length) {
         var audioCtx = new AudioContext();
         var source = audioCtx.createMediaStreamSource(this.stream);
         const audioMotion = new AudioMotionAnalyzer(
