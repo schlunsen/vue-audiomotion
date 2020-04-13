@@ -14,8 +14,8 @@
     "*.json",
     "*.js"
   ],
-  "main":  "./dist/vue-audiomotion.common.js", 
-  "version": "0.1.4",
+  "main": "./dist/vue-audiomotion.common.js",
+  "version": "0.1.5",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "audiomotion-analyzer": "^2.1.0",
-    "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
