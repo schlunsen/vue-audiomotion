@@ -8,14 +8,18 @@ export default {
   props: ["stream", "options"],
   watch: {
     stream() {
-      var audioCtx = new AudioContext();
-      var source = audioCtx.createMediaStreamSource(this.stream);
-      const audioMotion = new AudioMotionAnalyzer(
-        this.$refs['audioMotion' + this._uid],
-        this.options
-      );
-      let sourceMic = audioMotion.audioCtx.createMediaStreamSource(this.stream);
-      sourceMic.connect(audioMotion.analyzer);
+      if (this.stream && this.stream.getAudioTracks()) {
+        var audioCtx = new AudioContext();
+        var source = audioCtx.createMediaStreamSource(this.stream);
+        const audioMotion = new AudioMotionAnalyzer(
+          this.$refs["audioMotion" + this._uid],
+          this.options
+        );
+        let sourceMic = audioMotion.audioCtx.createMediaStreamSource(
+          this.stream
+        );
+        sourceMic.connect(audioMotion.analyzer);
+      }
     }
   }
 };
