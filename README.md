@@ -1,9 +1,9 @@
 # vue-audiomotion-analyzer
+
 [![npm (scoped with tag)](https://img.shields.io/npm/v/vue-audiomotion/latest.svg?style=flat-square)](https://npmjs.com/package/vue-audiomotion)
 [![npm](https://img.shields.io/npm/dt/vue-audiomotion.svg?style=flat-square)](https://npmjs.com/package/vue-audiomotion)
 [![Dependencies](https://david-dm.org/schlunsen/vue-audiomotion/status.svg?style=flat-square)](https://david-dm.org/schlunsen/vue-audiomotion)
 [![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
-
 
 Wrapper for the awesome [audiomotion-analyzer](https://www.npmjs.com/package/audiomotion-analyzer)
 
@@ -53,7 +53,22 @@ Add the comonent
             source: HTMLMediaElement,
             start: boolean (true),
             width: number
-      };
+      },
+      customGradients: [
+        {
+          name: "newGradient",
+          options: {
+            bgColor: '#fff', // background color (required)
+            dir: "h", // add this to create a horizontal gradient (optional)
+            colorStops: [
+              // list your gradient colors in this array (at least 2 entries are required)
+              "yellow", // colors may be defined in any CSS valid format
+              { pos: 0.6, color: "#ff0" }, // use an object to adjust the position (0 to 1) of a color
+              "hsl( 0, 100%, 50% )" // colors may be defined in any CSS valid format
+            ]
+          }
+        }
+      ]
     },
     mounted() {
       navigator.mediaDevices
@@ -65,13 +80,23 @@ Add the comonent
           this.stream = stream;
         })
         .catch(err => {});
+
+        // Access AudioMotionAnalyzer obj
+        // See https://www.npmjs.com/package/audiomotion-analyzer#methods for available methods
+        let audioMotionAnalyzer = this.$refs.audioMotion.getAudioMotion()
+        
     }
   };
 </script>
 ```
 
 ```html
-<AudioMotion :stream="stream" :options="options"></AudioMotion>
+<AudioMotion
+  ref="audioMotion"
+  :stream="stream"
+  :options="options"
+  :customGradients="customGradients"
+></AudioMotion>
 ```
 
 ## Thanks
@@ -85,7 +110,3 @@ Checkout the [demo page](https://audiomotion.me/public/)
 [MIT License](./LICENSE)
 
 Copyright (c) Rasmus Schlunsen
-
-
-
-
