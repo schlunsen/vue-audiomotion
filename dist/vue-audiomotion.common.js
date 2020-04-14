@@ -196,12 +196,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"73a6c03c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AudioMotion.vue?vue&type=template&id=35c9ffe8&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:'audioMotion-' + this._uid})}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"73a6c03c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AudioMotion.vue?vue&type=template&id=7cc9d5ce&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"audioMotion"})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/AudioMotion.vue?vue&type=template&id=35c9ffe8&
+// CONCATENATED MODULE: ./src/components/AudioMotion.vue?vue&type=template&id=7cc9d5ce&
 
 // CONCATENATED MODULE: ./node_modules/audiomotion-analyzer/dist/audioMotion-analyzer.js
 /*!
@@ -1318,12 +1318,15 @@ class AudioMotionError extends Error {
 
 /* harmony default export */ var AudioMotionvue_type_script_lang_js_ = ({
   props: ["stream", "options"],
+  mounted: function mounted() {
+    this.audioMotion = this.$refs.audioMotion;
+  },
   watch: {
     stream: function stream() {
-      if (this.stream && this.stream.getAudioTracks()) {
+      if (this.stream && this.stream.getAudioTracks().length) {
         var audioCtx = new AudioContext();
         var source = audioCtx.createMediaStreamSource(this.stream);
-        var audioMotion = new AudioMotionAnalyzer(this.$refs["audioMotion" + this._uid], this.options);
+        var audioMotion = new AudioMotionAnalyzer(this.audioMotion, this.options);
         var sourceMic = audioMotion.audioCtx.createMediaStreamSource(this.stream);
         sourceMic.connect(audioMotion.analyzer);
       }
