@@ -15,19 +15,19 @@
     "*.js"
   ],
   "main": "./dist/vue-audiomotion.common.js",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build-bundle": "vue-cli-service build --target lib --name vue-audiomotion ./src/components/index.js"
   },
   "dependencies": {
-    "audiomotion-analyzer": "^2.1.0",
+    "audiomotion-analyzer": "^3.6.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.3.0",
-    "@vue/cli-service": "~4.3.0",
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-service": "^4.5.15",
     "vue-template-compiler": "^2.6.11"
   }
 }
